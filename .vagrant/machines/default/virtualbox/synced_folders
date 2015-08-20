@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/project":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/project","hostpath":"/Users/ian/Projects/hackathon/hackntu2015/src/project","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/ian/Projects/hackathon/hackntu2015/src/project","disabled":false}}}
