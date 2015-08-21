@@ -7,6 +7,8 @@ use Storage;
 use App\Clinic;
 use App\Clinic_types;
 use App\Clinic_ownerships;
+use App\Geocoding_jobs;
+use DB;
 
 class Test extends Command
 {
@@ -41,8 +43,107 @@ class Test extends Command
      */
     public function handle()
     {
+        $flag = true;
+        while($flag)
+        {
+            // Do job
+            if ( $msg = $this->fillGeoInfo() )
+            {
+                echo $msg . PHP_EOL;
+            }
+            else
+            {
+                break;
+            }
+
+            $totalJobs = Geocoding_jobs::total_jobs();
+            $sec = $this->getRandom();
+            $msg = sprintf('wait %d sec for next job. [ remain %d jobs ]', $sec, $totalJobs);
+            echo $msg . PHP_EOL;
+            sleep($sec);
+        }
+
+        // $this->fillGeoInfo();
+
+
+        // $this->geocoding();
         // $this->importClinicDataFromCSV();
-        $this->importClinicDataFromCSV2();
+        // $this->importClinicDataFromCSV2();
+    }
+    private function getRandom()
+    {
+        return rand(1, rand(2, 3));
+    }
+    private function fillGeoInfo()
+    {
+        // DB::select(DB::raw(Geocoding_jobs::SQL_generateJob()));
+        $job = DB::select(DB::raw(Geocoding_jobs::SQL_takeJob()));
+
+        if ($job)
+        {
+            $msg = 'init';
+
+            try {
+                if ( $geo = $this->geocoding( $job[0]->address ) )
+                {
+                    if ( $clinic = Clinic::find( $job[0]->clinic_id ) )
+                    {
+                        $clinic->latitue    = $geo['lat'];
+                        $clinic->longitude  = $geo['lng'];
+                        $clinic->save();
+                    }
+                    if ( $update_job = Geocoding_jobs::find( $job[0]->id ) )
+                    {
+                        $update_job->status = Geocoding_jobs::STATUS_SUCCESS;
+                        $update_job->save();
+                    }
+
+                    $msg = sprintf('%s: %s => (%s, %s)',
+                                    $job[0]->name,
+                                    $job[0]->address,
+                                    $geo['lat'],
+                                    $geo['lng'] );
+                }
+                else
+                {
+                    Geocoding_jobs::markEmptyQuery( $job[0]->id );
+                }
+            } catch (Exception $e) {
+                $msg = 'Error';
+            }
+
+            return $msg;
+        }
+        else
+        {
+            return FALSE;
+        }
+    }
+    private function geocoding($string)
+    {
+        // $string = "新北市新店區北新路二段164號1樓";
+        $string = str_replace (" ", "+", urlencode($string));
+        $details_url = "http://maps.googleapis.com/maps/api/geocode/json?address=".$string."&sensor=false";
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $details_url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $response = json_decode(curl_exec($ch), true);
+
+        try {
+            if ($response['status'] != 'OK')
+            {
+                var_dump($response);
+                return NULL;
+            }
+            
+            return [
+                'lat' => $response['results'][0]['geometry']['viewport']['northeast']['lat'],
+                'lng' => $response['results'][0]['geometry']['viewport']['northeast']['lng']
+            ];
+        } catch (Exception $e) {
+            return NULL;
+        }
     }
     private function Clinic_types()
     {

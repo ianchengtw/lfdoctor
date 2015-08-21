@@ -16,4 +16,10 @@ Route::get('/', function () {
 });
 
 Route::pattern('id', '[0-9]+');
-Route::get('itemsincircle/{id}', 'MapController@getItemsInCircle');
+Route::pattern('lat', '([0-9]+).([0-9]+)');
+Route::pattern('lng', '([0-9]+).([0-9]+)');
+Route::pattern('radius', '[0-9]+');
+Route::get('itembyid/{id}', 'MapController@getItemById');
+Route::get('itembylatlng/{lat}/{lng}', 'MapController@getItemByLatLng');
+Route::get('itemsincircle/{lat}/{lng}', 'MapController@getItemsInCircle');
+Route::get('itemsincircle/{lat}/{lng}/{radius}', 'MapController@getItemsInCircle');
