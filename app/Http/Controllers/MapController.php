@@ -31,6 +31,27 @@ class MapController extends Controller
         $item = DB::select(DB::raw($sql));
         return response()->json($item);
     }
+    public function getItemByName($name)
+    {
+        $sql = "SELECT
+                    C.id,
+                    C.name,
+                    C.address,
+                    C.tel,
+                    C.service_hours,
+                    C.latitue,
+                    C.longitude,
+                    O.name AS ownership,
+                    T.name AS type
+                FROM 
+                    clinics AS C JOIN 
+                    clinic_ownerships AS O ON C.ownership_id = O.id JOIN
+                    clinic_types AS T ON C.type_id = T.id
+                WHERE C.name LIKE '%{$name}%';";
+
+        $item = DB::select(DB::raw($sql));
+        return response()->json($item);
+    }
     public function getItemByLatLng($lat, $lng)
     {
         $sql = "SELECT

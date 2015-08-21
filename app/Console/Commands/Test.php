@@ -136,7 +136,7 @@ class Test extends Command
                 var_dump($response);
                 return NULL;
             }
-            
+
             return [
                 'lat' => $response['results'][0]['geometry']['viewport']['northeast']['lat'],
                 'lng' => $response['results'][0]['geometry']['viewport']['northeast']['lng']
