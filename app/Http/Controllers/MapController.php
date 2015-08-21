@@ -12,6 +12,7 @@ class MapController extends Controller
 {
     public function getItemById($id)
     {
+
         $sql = "SELECT
                     C.id,
                     C.name,

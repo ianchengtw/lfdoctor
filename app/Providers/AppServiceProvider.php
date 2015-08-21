@@ -13,7 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->publishes([
+            base_path('vendor/components/jquery') => public_path('js/jquery'),
+        ], 'public');
     }
 
     /**
