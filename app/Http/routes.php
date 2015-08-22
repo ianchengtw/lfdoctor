@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landingpage');
 });
 Route::get('/jquery', function () {
     return view('jquery');
