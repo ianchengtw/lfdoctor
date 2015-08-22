@@ -1,0 +1,10 @@
+.img-responsive {
+	display: inline-block !important;
+}
+.portfolio-item p {
+	word-wrap: break-word;
+}
+.img-member {
+	width:auto;
+	height:200px;
+}

@@ -14,6 +14,7 @@
     <title>L.F.Doctor</title>
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link href="css/main.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
@@ -98,7 +99,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="themes-div">
+                <div class="themes-div col-lg-8 col-lg-offset-2">
                     <p>L.F.Doctor 源自於 Look For Doctor，最大的用意為找尋醫生、找尋診所，L.F.另有 Local Friend 之意，及意味著我們可以做為您當地的好朋友，指引您前往最適合的診所。</p>
                 </div>
             </div>
@@ -139,27 +140,27 @@
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
                     <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
-                    <p>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk111<br>111kkkkkkkkkkkkkkkkkkkkkkkkkkk1111<br>kkkkkkkkkkkkkkkkkkkkkkkkk</p>
+                    <p>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk111111kkkkkkkkkkkkkkkkkkkkkkkkkkk1111kkkkkkkkkkkkkkkkkkkkkkkkk</p>
                 </div>
                 <div class="col-sm-4 portfolio-item">
                     <img src="img/portfolio/cake.png" class="img-responsive" alt="">
-                    <p>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk111<br>111kkkkkkkkkkkkkkkkkkkkkkkkkkk1111<br>kkkkkkkkkkkkkkkkkkkkkkkkk</p>
+                    <p>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk111111kkkkkkkkkkkkkkkkkkkkkkkkkkk1111kkkkkkkkkkkkkkkkkkkkkkkkk</p>
                 </div>
                 <div class="col-sm-4 portfolio-item">
                     <img src="img/portfolio/circus.png" class="img-responsive" alt="">
-                    <p>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk111<br>111kkkkkkkkkkkkkkkkkkkkkkkkkkk1111<br>kkkkkkkkkkkkkkkkkkkkkkkkk</p>
+                    <p>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk111111kkkkkkkkkkkkkkkkkkkkkkkkkkk1111kkkkkkkkkkkkkkkkkkkkkkkkk</p>
                 </div>
                 <div class="col-sm-4 portfolio-item">
                     <img src="img/portfolio/game.png" class="img-responsive" alt="">
-                    <p>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk111<br>111kkkkkkkkkkkkkkkkkkkkkkkkkkk1111<br>kkkkkkkkkkkkkkkkkkkkkkkkk</p>
+                    <p>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk111111kkkkkkkkkkkkkkkkkkkkkkkkkkk1111kkkkkkkkkkkkkkkkkkkkkkkkk</p>
                 </div>
                 <div class="col-sm-4 portfolio-item">
                     <img src="img/portfolio/safe.png" class="img-responsive" alt="">
-                    <p>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk111<br>111kkkkkkkkkkkkkkkkkkkkkkkkkkk1111<br>kkkkkkkkkkkkkkkkkkkkkkkkk</p>
+                    <p>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk111111kkkkkkkkkkkkkkkkkkkkkkkkkkk1111kkkkkkkkkkkkkkkkkkkkkkkkk</p>
                 </div>
                 <div class="col-sm-4 portfolio-item">
                     <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
-                    <p>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk111<br>111kkkkkkkkkkkkkkkkkkkkkkkkkkk1111<br>kkkkkkkkkkkkkkkkkkkkkkkkk</p>
+                    <p>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk111111kkkkkkkkkkkkkkkkkkkkkkkkkkk1111kkkkkkkkkkkkkkkkkkkkkkkkk</p>
                 </div>
             </div>
         </div>
@@ -171,63 +172,44 @@
                 <div class="col-lg-12 text-center">
                     <h2>創作團隊</h2>
                     <img class="img-responsive" src="img/logo.gif" alt="" align="middle">
+                    
                 </div>
             </div>
+            <div class="col-lg-12">
+                <p>來自學校與業界的結合，在媒合會中各放異采，互相吸引，成就了今日成就。共同的理念，為了造福常赴外地工作讀書，或是地區新居民，此APP將成為他們在身體出狀況急需找附近醫生時，最好的朋友！因為我們提供了公平公正的處分紀錄，提供大家判斷診所對自己的適合度！</p>
+            </div>
             <div class="row">
-                <div class="themes-div">
-                    <p>來自學校與業界的結合，在媒合會中各放異采，互相吸引，成就了今日成就。共同的理念，為了造福常赴外地工作讀書，或是地區新居民，此APP將成為他們在身體出狀況急需找附近醫生時，最好的朋友！因為我們提供了公平公正的處分紀錄，提供大家判斷診所對自己的適合度！</p>
+                <div class="col-sm-3 portfolio-item">
+                    <img class="img-member" src="img/member1.jpg" alt="" align="middle">
+                    <p>王郁卉</p>
+                    <p>台灣科技大學-資訊管理系</p>
+                    <p>app前端</p>
+                    <i class="glyphicon glyphicon-envelope"></i>
+                </div>
+                <div class="col-sm-3 portfolio-item">
+                    <img class="img-member" src="img/member2.jpg" alt="" align="middle">
+                    <p>陳儀玲</p>
+                    <p>台灣科技大學-資訊管理系</p>
+                    <p>資料分析</p>
+                    <i class="glyphicon glyphicon-envelope"></i>
+                </div>
+                <div class="col-sm-3 portfolio-item">
+                    <img class="img-member" src="img/member3.jpg" alt="" align="middle">
+                    <p>張美詩</p>
+                    <p>台灣科技大學-資訊管理系</p>
+                    <p>美術總監</p>
+                    <i class="glyphicon glyphicon-envelope"></i>
+                </div>
+                <div class="col-sm-3 portfolio-item">
+                    <img class="img-member" src="img/member4.jpg" alt="" align="middle">
+                    <p>Yun Hung</p>
+                    <p>義守大學-土木工程系畢業</p>
+                    <p>app後端</p>
+                    <p><i class="glyphicon glyphicon-envelope"></i>chang.baoh@gmail.com</p>
                 </div>
             </div>
         </div>
     </section>  
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>聯絡我們</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    <form name="sentMessage" id="contactForm" novalidate>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Name</label>
-                                <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Email Address</label>
-                                <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Message</label>
-                                <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <br>
-                        <div id="success"></div>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg">Send</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="text-center">
