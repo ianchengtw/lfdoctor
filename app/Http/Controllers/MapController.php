@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
+use Input;
 
 class MapController extends Controller
 {
@@ -76,8 +77,13 @@ class MapController extends Controller
         $item = DB::select(DB::raw($sql));
         return response()->json($item);
     }
-    public function getItemsInCircle($lat, $lng, $radius = 10)
+    public function getItemsInCircle()
     {
+        $input = Input::all();
+        $lat    = $input['lat'];
+        $lng    = $input['lng'];
+        $radius = (empty($input['radius'])) ? 10 : $input['radius'];
+
         $sql = "SELECT
                     C.id
                     ,C.name
@@ -104,31 +110,15 @@ class MapController extends Controller
         $items = DB::select(DB::raw($sql));
         return response()->json($this->parseServiceTime($items));
     }
-    // public function getItemsInCircle($lat, $lng, $radius = 10)
-    // {
-    //     $sql = "SELECT
-    //                 C.id,
-    //                 C.name,
-    //                 C.address,
-    //                 C.tel,
-    //                 C.service_hours,
-    //                 C.latitue,
-    //                 C.longitude,
-    //                 O.name AS ownership,
-    //                 T.name AS type,
-    //                 ( 6371 * acos( cos( radians({$lat}) ) * cos( radians( latitue ) ) * cos( radians( longitude ) - radians({$lng}) ) + sin( radians({$lat}) ) * sin(radians(latitue)) ) ) AS distance
-    //             FROM 
-    //                 clinics AS C JOIN 
-    //                 clinic_ownerships AS O ON C.ownership_id = O.id JOIN
-    //                 clinic_types AS T ON C.type_id = T.id
-    //             HAVING distance < $radius 
-    //             ORDER BY distance ;";
-
-    //     $item = DB::select(DB::raw($sql));
-    //     return response()->json($item);
-    // }
-    public function getItemsInCircleByTT($lat, $lng, $type, $time, $radius = 10)
+    public function getItemsInCircleByTT()
     {
+        $input = Input::all();
+        $lat    = $input['lat'];
+        $lng    = $input['lng'];
+        $type   = $input['type'];
+        $time   = $input['time'];
+        $radius = (empty($input['radius'])) ? 10 : $input['radius'];
+
         $sql = "SELECT
                     C.id
                     ,C.name
@@ -168,7 +158,6 @@ class MapController extends Controller
                 HAVING distance <= {$radius}
                 ORDER BY distance;";
 
-        // echo $sql;exit();
         $items = DB::select(DB::raw($sql));
         return response()->json($this->parseServiceTime($items));
     }
