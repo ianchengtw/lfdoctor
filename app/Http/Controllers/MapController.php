@@ -110,7 +110,44 @@ class MapController extends Controller
         $items = DB::select(DB::raw($sql));
         return response()->json($this->parseServiceTime($items));
     }
-    public function getItemsInCircleByTT()
+    public function getItemsInCircleByType()
+    {
+        $input = Input::all();
+        $lat    = $input['lat'];
+        $lng    = $input['lng'];
+        $type   = $input['type'];
+        $radius = (empty($input['radius'])) ? 10 : $input['radius'];
+
+        $sql = "SELECT
+                    C.id
+                    ,C.name
+                    ,C.tel
+                    ,GROUP_CONCAT(  CONCAT( CONCAT( CONCAT( CONCAT( SH.time_start, ',') , SH.time_end ), ',' ),  SH.work_day)
+                    SEPARATOR '::') AS service_time
+                    ,L.address
+                    ,L.lat
+                    ,L.lng
+                    ,( 6371 * acos( cos( radians({$lat}) ) * cos( radians( L.lat ) ) * cos( radians( L.lng ) - radians({$lng}) ) + sin( radians({$lat}) ) * sin(radians(L.lat)) ) ) AS distance
+                FROM clinics AS C
+                INNER JOIN clinic_locations AS L ON C.location_id = L.id
+                INNER JOIN clinic_service_hours AS SH ON C.id = SH.clinic_id
+                WHERE
+                    L.lat != 0
+                    AND C.type_id = {$type}
+                GROUP BY
+                    C.id
+                    ,C.name
+                    ,C.tel
+                    ,L.address
+                    ,L.lat
+                    ,L.lng
+                HAVING distance <= {$radius}
+                ORDER BY distance;";
+
+        $items = DB::select(DB::raw($sql));
+        return response()->json($this->parseServiceTime($items));
+    }
+    public function getItemsInCircleByTypeTime()
     {
         $input = Input::all();
         $lat    = $input['lat'];

@@ -37,5 +37,8 @@ Route::post('itemsincircle/{lat}/{lng}', 'MapController@getItemsInCircle');
 Route::get('itemsincircle', 'MapController@getItemsInCircle');
 Route::post('itemsincircle', 'MapController@getItemsInCircle');
 
-Route::get('itemsincirclebytt', 'MapController@getItemsInCircleByTT');
-Route::post('itemsincirclebytt', 'MapController@getItemsInCircleByTT');
+Route::get('itemsincirclebytype', 'MapController@getItemsInCircleByType');
+Route::post('itemsincirclebytype', 'MapController@getItemsInCircleByType');
+
+Route::get('itemsincirclebytypetime', 'MapController@getItemsInCircleByTypeTime');
+Route::post('itemsincirclebytypetime', 'MapController@getItemsInCircleByTypeTime');
