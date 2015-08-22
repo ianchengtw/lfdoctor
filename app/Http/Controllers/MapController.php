@@ -82,7 +82,7 @@ class MapController extends Controller
         $input = Input::all();
         $lat    = $input['lat'];
         $lng    = $input['lng'];
-        $radius = (empty($input['radius'])) ? 10 : $input['radius'];
+        $radius = (empty($input['radius'])) ? 3 : $input['radius'];
 
         $sql = "SELECT
                     C.id
@@ -122,7 +122,7 @@ class MapController extends Controller
         $lat    = $input['lat'];
         $lng    = $input['lng'];
         $type   = $input['type'];
-        $radius = (empty($input['radius'])) ? 10 : $input['radius'];
+        $radius = (empty($input['radius'])) ? 3 : $input['radius'];
 
         $sql = "SELECT
                     C.id
@@ -166,7 +166,7 @@ class MapController extends Controller
         $lng    = $input['lng'];
         $type   = $input['type'];
         $time   = $input['time'];
-        $radius = (empty($input['radius'])) ? 10 : $input['radius'];
+        $radius = (empty($input['radius'])) ? 3 : $input['radius'];
 
         $sql = "SELECT
                     C.id
