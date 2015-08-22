@@ -48,8 +48,8 @@ class ImportData extends Command
     public function handle()
     {
         // $this->importClinics();
-        $this->importClinicSchedules();
-        // $this->importClinicPunishments();
+        // $this->importClinicSchedules();
+        $this->importClinicPunishments();
         // $this->generateRelationalTableData();
     }
 
@@ -248,9 +248,45 @@ class ImportData extends Command
         $count = 0;
         foreach ($contents as $key => $value)
         {
+            if ($count == 0) {$count++;continue;}
             // $value = iconv("big5","UTF-8//IGNORE",$value);
-            // $value = explode(',', $value);
-            var_dump($value);
+            $value = explode('::', $value);
+            
+            if (count($value) == 8)
+            {
+                if (Clinic::where('name', '=', $value[2])->exists())
+                {
+                    $clinic_id = Clinic::where('name', '=', $value[2])->first()->id;
+                    if (Clinic_punishment::where('clinic_id', '=', $clinic_id)->exists())
+                    {
+                        $c = Clinic_punishment::where('clinic_id', '=', $clinic_id)->first();
+                        $start = $value[6];
+                        $end = $value[7];
+                        $c->date_start  = (1911 + substr($start,0,3)) .'-'. substr($start,3,2).'-'. substr($start,5);
+                        $c->date_end    = (1911 + substr($end,0,3)) .'-'. substr($end,3,2).'-'. substr($end,5);
+                        $c->save();
+                    }
+                    else
+                    {
+                        $c = new Clinic_punishment;
+                        $c->clinic_id   = $clinic_id;
+                        $c->city        = $value[1];
+                        $c->people      = $value[3];
+                        $c->punishment  = $value[4];
+                        $c->reason      = $value[5];
+                        $start = $value[6];
+                        $end = $value[7];
+                        $c->date_start  = (1911 + substr($start,0,3)) .'-'. substr($start,3,2).'-'. substr($start,5);
+                        $c->date_end    = (1911 + substr($end,0,3)) .'-'. substr($end,3,2).'-'. substr($end,5);
+                        $c->save();
+                    }
+                }
+                else
+                {
+                    var_dump($value[0]);
+                }
+                
+            }
 
             $count++;
             // if ($count > 3) {break;}
