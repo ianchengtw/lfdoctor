@@ -21,7 +21,6 @@ Route::get('/jquery', function () {
 Route::pattern('id', '[0-9]+');
 Route::pattern('lat', '([0-9]+).([0-9]+)');
 Route::pattern('lng', '([0-9]+).([0-9]+)');
-Route::pattern('radius', '[0-9]+');
 
 Route::get('itembyid/{id}', 'MapController@getItemById');
 Route::post('itembyid/{id}', 'MapController@getItemById');
@@ -35,5 +34,11 @@ Route::post('itembylatlng/{lat}/{lng}', 'MapController@getItemByLatLng');
 Route::get('itemsincircle/{lat}/{lng}', 'MapController@getItemsInCircle');
 Route::post('itemsincircle/{lat}/{lng}', 'MapController@getItemsInCircle');
 
-Route::get('itemsincircle/{lat}/{lng}/{radius}', 'MapController@getItemsInCircle');
-Route::post('itemsincircle/{lat}/{lng}/{radius}', 'MapController@getItemsInCircle');
+Route::get('itemsincircle', 'MapController@getItemsInCircle');
+Route::post('itemsincircle', 'MapController@getItemsInCircle');
+
+Route::get('itemsincirclebytype', 'MapController@getItemsInCircleByType');
+Route::post('itemsincirclebytype', 'MapController@getItemsInCircleByType');
+
+Route::get('itemsincirclebytypetime', 'MapController@getItemsInCircleByTypeTime');
+Route::post('itemsincirclebytypetime', 'MapController@getItemsInCircleByTypeTime');

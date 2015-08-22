@@ -15,6 +15,8 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         \App\Console\Commands\Inspire::class,
         \App\Console\Commands\Test::class,
+        \App\Console\Commands\ImportData::class,
+        \App\Console\Commands\GetLatLng2DB::class,
     ];
 
     /**
