@@ -134,6 +134,7 @@ class MapController extends Controller
                 INNER JOIN clinic_service_hours AS SH ON C.id = SH.clinic_id
                 WHERE
                     L.lat != 0
+                    AND C.type_id = {$type}
                     AND (   
                             (
                                 BINARY SH.time_start <= BINARY SH.time_end
