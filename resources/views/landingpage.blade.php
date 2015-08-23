@@ -140,28 +140,21 @@
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
                     <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
-                    <p>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk111111kkkkkkkkkkkkkkkkkkkkkkkkkkk1111kkkkkkkkkkkkkkkkkkkkkkkkk</p>
-                </div>
+                    <p>起始頁面：主要兩大功能的buttom，一為診所查詢功能，不但能查出適合自己的時間及臨近的地點，更重要的事可查詢到診所的違規處分紀錄。</p>
+            </div>
                 <div class="col-sm-4 portfolio-item">
                     <img src="img/portfolio/cake.png" class="img-responsive" alt="">
-                    <p>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk111111kkkkkkkkkkkkkkkkkkkkkkkkkkk1111kkkkkkkkkkkkkkkkkkkkkkkkk</p>
+                    <p>輸入搜尋條件，以地址為主找出半徑3公里的鄰近地址，更可藉由診療類別或是自己想要看診的時間做篩選。</p>
                 </div>
                 <div class="col-sm-4 portfolio-item">
                     <img src="img/portfolio/circus.png" class="img-responsive" alt="">
-                    <p>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk111111kkkkkkkkkkkkkkkkkkkkkkkkkkk1111kkkkkkkkkkkkkkkkkkkkkkkkk</p>
+                    <p>篩選結果會標示在google map上。</p>
                 </div>
                 <div class="col-sm-4 portfolio-item">
                     <img src="img/portfolio/game.png" class="img-responsive" alt="">
-                    <p>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk111111kkkkkkkkkkkkkkkkkkkkkkkkkkk1111kkkkkkkkkkkkkkkkkkkkkkkkk</p>
+                    <p>點擊地圖上紅點即會出現此頁面，頁面中會顯示診所基本資料，以及診所的處分紀錄。</p>
                 </div>
-                <div class="col-sm-4 portfolio-item">
-                    <img src="img/portfolio/safe.png" class="img-responsive" alt="">
-                    <p>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk111111kkkkkkkkkkkkkkkkkkkkkkkkkkk1111kkkkkkkkkkkkkkkkkkkkkkkkk</p>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
-                    <p>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk111111kkkkkkkkkkkkkkkkkkkkkkkkkkk1111kkkkkkkkkkkkkkkkkkkkkkkkk</p>
-                </div>
+                
             </div>
         </div>
     </section>
@@ -251,7 +244,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        Copyright &copy; Your Website 2014
+                        Copyright &copy; L.F. Doctor 2015
                     </div>
                 </div>
             </div>
