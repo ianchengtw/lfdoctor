@@ -82,7 +82,7 @@ class MapController extends Controller
         $input = Input::all();
         $lat    = $input['lat'];
         $lng    = $input['lng'];
-        $radius = (empty($input['radius'])) ? 10 : $input['radius'];
+        $radius = (empty($input['radius'])) ? 3 : $input['radius'];
 
         $sql = "SELECT
                     C.id
@@ -93,9 +93,15 @@ class MapController extends Controller
                     ,L.lat
                     ,L.lng
                     ,( 6371 * acos( cos( radians({$lat}) ) * cos( radians( L.lat ) ) * cos( radians( L.lng ) - radians({$lng}) ) + sin( radians({$lat}) ) * sin(radians(L.lat)) ) ) AS distance
+                    ,P.people
+                    ,P.punishment
+                    ,P.reason
+                    ,P.date_start AS punishment_time_start
+                    ,P.date_end AS punishment_time_end
                 FROM clinics AS C
                 INNER JOIN clinic_locations AS L ON C.location_id = L.id
                 INNER JOIN clinic_service_hours AS SH ON C.id = SH.clinic_id
+                LEFT JOIN clinic_punishments AS P ON C.id = P.clinic_id
                 WHERE L.lat != 0
                 GROUP BY
                     C.id
@@ -116,7 +122,7 @@ class MapController extends Controller
         $lat    = $input['lat'];
         $lng    = $input['lng'];
         $type   = $input['type'];
-        $radius = (empty($input['radius'])) ? 10 : $input['radius'];
+        $radius = (empty($input['radius'])) ? 3 : $input['radius'];
 
         $sql = "SELECT
                     C.id
@@ -128,9 +134,15 @@ class MapController extends Controller
                     ,L.lat
                     ,L.lng
                     ,( 6371 * acos( cos( radians({$lat}) ) * cos( radians( L.lat ) ) * cos( radians( L.lng ) - radians({$lng}) ) + sin( radians({$lat}) ) * sin(radians(L.lat)) ) ) AS distance
+                    ,P.people
+                    ,P.punishment
+                    ,P.reason
+                    ,P.date_start AS punishment_time_start
+                    ,P.date_end AS punishment_time_end
                 FROM clinics AS C
                 INNER JOIN clinic_locations AS L ON C.location_id = L.id
                 INNER JOIN clinic_service_hours AS SH ON C.id = SH.clinic_id
+                LEFT JOIN clinic_punishments AS P ON C.id = P.clinic_id
                 WHERE
                     L.lat != 0
                     AND C.type_id = {$type}
@@ -154,7 +166,7 @@ class MapController extends Controller
         $lng    = $input['lng'];
         $type   = $input['type'];
         $time   = $input['time'];
-        $radius = (empty($input['radius'])) ? 10 : $input['radius'];
+        $radius = (empty($input['radius'])) ? 3 : $input['radius'];
 
         $sql = "SELECT
                     C.id
@@ -166,9 +178,15 @@ class MapController extends Controller
                     ,L.lat
                     ,L.lng
                     ,( 6371 * acos( cos( radians({$lat}) ) * cos( radians( L.lat ) ) * cos( radians( L.lng ) - radians({$lng}) ) + sin( radians({$lat}) ) * sin(radians(L.lat)) ) ) AS distance
+                    ,P.people
+                    ,P.punishment
+                    ,P.reason
+                    ,P.date_start AS punishment_time_start
+                    ,P.date_end AS punishment_time_end
                 FROM clinics AS C
                 INNER JOIN clinic_locations AS L ON C.location_id = L.id
                 INNER JOIN clinic_service_hours AS SH ON C.id = SH.clinic_id
+                LEFT JOIN clinic_punishments AS P ON C.id = P.clinic_id
                 WHERE
                     L.lat != 0
                     AND C.type_id = {$type}
