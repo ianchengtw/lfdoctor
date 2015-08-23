@@ -177,27 +177,27 @@
                     <p>王郁卉</p>
                     <p>台灣科技大學-資訊管理系</p>
                     <p>app前端</p>
-                    <i class="glyphicon glyphicon-envelope"></i>
+                    <i class="glyphicon glyphicon-envelope">Iris_iriswang@gmail.com</i>
                 </div>
                 <div class="col-sm-3 portfolio-item">
                     <img class="img-member" src="img/member2.jpg" alt="" align="middle">
                     <p>陳儀玲</p>
                     <p>台灣科技大學-資訊管理系</p>
                     <p>資料分析</p>
-                    <i class="glyphicon glyphicon-envelope"></i>
+                    <i class="glyphicon glyphicon-envelope">jolin1234x@gmail.com</i>
                 </div>
                 <div class="col-sm-3 portfolio-item">
                     <img class="img-member" src="img/member3.jpg" alt="" align="middle">
                     <p>張美詩</p>
                     <p>台灣科技大學-資訊管理系</p>
                     <p>美術總監</p>
-                    <i class="glyphicon glyphicon-envelope"></i>
+                    <i class="glyphicon glyphicon-envelope">meisee1603@hotmail.com</i>
                 </div>
                 <div class="col-sm-3 portfolio-item">
                     <img class="img-member" src="img/member4.jpg" alt="" align="middle">
                     <p>Yun Hung</p>
-                    <p>義守大學-土木工程系畢業</p>
-                    <p>app後端</p>
+                    <p>義守大學-土木工程系</p>
+                    <p>後端server</p>
                     <p><i class="glyphicon glyphicon-envelope"></i>chang.baoh@gmail.com</p>
                 </div>
             </div>
