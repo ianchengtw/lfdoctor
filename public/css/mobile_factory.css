@@ -1,0 +1,14 @@
+.navbar-fixed-top {padding:20px !important;}
+header .container {padding-top: 150px !important;}
+.btn-detect-container a {color:white !important;}
+.btn-detect-container a:hover {color:#18bc9c !important;}
+
+.mfQuestion {
+	width: 100%;
+}
+.mfHistory {
+	width: 100%;
+	min-height: 300px;
+	max-height: 430px;
+	overflow-y: auto;
+}

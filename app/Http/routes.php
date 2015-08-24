@@ -14,8 +14,11 @@
 Route::get('/', function () {
     return view('landingpage');
 });
-Route::get('/jquery', function () {
+Route::get('jquery', function () {
     return view('jquery');
+});
+Route::get('mobile_factory', function() {
+	return view('mobilefactory');
 });
 
 Route::pattern('id', '[0-9]+');
