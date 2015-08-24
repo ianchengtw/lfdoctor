@@ -139,21 +139,21 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
-                    <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
+                    <img src="img/1.jpg" class="img-responsive" alt="">
                     <p>起始頁面：主要兩大功能的buttom，一為診所查詢功能，不但能查出適合自己的時間及臨近的地點，更重要的事可查詢到診所的違規處分紀錄。</p>
             </div>
                 <div class="col-sm-4 portfolio-item">
-                    <img src="img/portfolio/cake.png" class="img-responsive" alt="">
+                    <img src="img/2.jpg" class="img-responsive" alt="">
                     <p>輸入搜尋條件，以地址為主找出半徑3公里的鄰近地址，更可藉由診療類別或是自己想要看診的時間做篩選。</p>
                 </div>
                 <div class="col-sm-4 portfolio-item">
-                    <img src="img/portfolio/circus.png" class="img-responsive" alt="">
+                    <img src="img/3.jpg" class="img-responsive" alt="">
                     <p>篩選結果會標示在google map上。</p>
                 </div>
-                <div class="col-sm-4 portfolio-item">
+                <!--<div class="col-sm-4 portfolio-item">
                     <img src="img/portfolio/game.png" class="img-responsive" alt="">
                     <p>點擊地圖上紅點即會出現此頁面，頁面中會顯示診所基本資料，以及診所的處分紀錄。</p>
-                </div>
+                </div>-->
                 
             </div>
         </div>
@@ -177,28 +177,28 @@
                     <p>王郁卉</p>
                     <p>台灣科技大學-資訊管理系</p>
                     <p>app前端</p>
-                    <i class="glyphicon glyphicon-envelope"></i>
+                    <i class="glyphicon glyphicon-envelope"> Iris_iriswang@gmail.com</i>
                 </div>
                 <div class="col-sm-3 portfolio-item">
                     <img class="img-member" src="img/member2.jpg" alt="" align="middle">
                     <p>陳儀玲</p>
                     <p>台灣科技大學-資訊管理系</p>
                     <p>資料分析</p>
-                    <i class="glyphicon glyphicon-envelope"></i>
+                    <i class="glyphicon glyphicon-envelope"> jolin1234x@gmail.com</i>
                 </div>
                 <div class="col-sm-3 portfolio-item">
                     <img class="img-member" src="img/member3.jpg" alt="" align="middle">
                     <p>張美詩</p>
                     <p>台灣科技大學-資訊管理系</p>
                     <p>美術總監</p>
-                    <i class="glyphicon glyphicon-envelope"></i>
+                    <i class="glyphicon glyphicon-envelope"> meisee1603@hotmail.com</i>
                 </div>
                 <div class="col-sm-3 portfolio-item">
                     <img class="img-member" src="img/member4.jpg" alt="" align="middle">
                     <p>Yun Hung</p>
-                    <p>義守大學-土木工程系畢業</p>
-                    <p>app後端</p>
-                    <p><i class="glyphicon glyphicon-envelope"></i>chang.baoh@gmail.com</p>
+                    <p>義守大學-土木工程系</p>
+                    <p>後端server</p>
+                    <p><i class="glyphicon glyphicon-envelope"></i> chang.baoh@gmail.com</p>
                 </div>
             </div>
         </div>
